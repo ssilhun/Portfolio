@@ -116,12 +116,17 @@ p {
     border-radius: var(--size-border-radius);
 }
 
-.navbar__menu_item.active {
-    border: solid var(--color-white); 
-}
-
+.navbar__menu_item.active, 
 .navbar__menu_item:hover {
     background-color: var(--color-dark-sky);
+    
+}
+
+.navbar__toggle-btn {
+    position: absolute;
+    right: 32px;
+    font-size: var(--font-medium);
+    display: none;
 }
 
 /* Home */
@@ -438,7 +443,7 @@ p {
 }
 
 #contact {
-    background-color: var(--color-dark-sky);
+    background-color: var(--color-sky);
 }
 
 .contact__title, 
@@ -460,4 +465,46 @@ p {
 .contact__links i:hover {
     transform: scale(1.2);
     color: var(--color-dark-grey);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        display: none;
+    }
+
+    .about__majors {
+        flex-direction: column;
+    }
+
+    .major {
+        margin: 38px;
+    }
+
+    .skillset {
+        flex-direction: column;
+    }
+
+    .project {
+        flex-grow: 1;
+    }
+
+    .testimonial__avarta {
+        width: 80px;
+        height: 80px;
+        margin: auto;
+    }
 }
