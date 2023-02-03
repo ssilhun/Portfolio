@@ -19,11 +19,15 @@ const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
     const link = target.dataset.link;
+    
     if (link == null) {
         return;
     }
+    // console.log(link);
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: "smooth"});
     navbarMenu.classList.remove('open');
-    scrollIntoView(link);
+    // scrollIntoView(link);
 });
 
 // Navbar toggle button for smaal screen
@@ -32,12 +36,4 @@ navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('open');
 });
 
-function logItem(e) {
-    const item = document.querySelector(`[data-id=${toggle}]`);
-    item.toggleAttribute('hidden');
-}
 
-const chapters = document.querySelectorAll('#toggle');
-chapters.forEach((chapter) => {
-chapter.addEventListener('toggle', logItem);
-});

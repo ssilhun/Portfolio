@@ -101,6 +101,7 @@ p {
     color: var(--color-white);
     padding: 16px;
     transform: var(--animation-duration) ease-in-out;
+    z-index: 1;
 }
 
 #navbar.navbar--dark {
