@@ -24,10 +24,10 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
     // console.log(link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    // const scrollTo = document.querySelector(link);
+    // scrollTo.scrollIntoView({behavior: "smooth"});
     navbarMenu.classList.remove('open');
-    // scrollIntoView(link);
+    scrollIntoView(link);
 });
 
 // Navbar toggle button for smaal screen
@@ -36,4 +36,14 @@ navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('open');
 });
 
+// Handle click on "contact me" button on home
+const HomeContactBtn = document.querySelector('.home__contact');
+HomeContactBtn.addEventListener('click', () => {
+    scrollIntoView('#contact');
 
+});
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
