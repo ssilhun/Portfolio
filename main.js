@@ -81,29 +81,34 @@ workBtnContainer.addEventListener('click', (e) => {
     if (filter == null){
         return;
     }
+    projectContainer.classList.add('animation-out');
 
-    projects.forEach((project) => {
-        // console.log(project);
-        if(filter === '*' || filter === project.dataset.type){
-            project.classList.remove('invisible');
-        }
-        else{
-            project.classList.add('invisible');
-        }
-    });
+    setTimeout(() => {
+        projects.forEach((project) => {
+            // console.log(project);
+            if(filter === '*' || filter === project.dataset.type){
+                project.classList.remove('invisible');
+            }
+            else{
+                project.classList.add('invisible');
+            }
+        });
+    
+        // Same way above
+        // for(let project of projects){
+        //     console.log(project);
+        // }
+    
+        // let project;
+        // for(let i=0; i < projects.length; i++) {
+        //     project = projects[i];
+        //     console.log(project);
+        // }
+    
+        // console.log(filter);
 
-    // Same way above
-    // for(let project of projects){
-    //     console.log(project);
-    // }
-
-    // let project;
-    // for(let i=0; i < projects.length; i++) {
-    //     project = projects[i];
-    //     console.log(project);
-    // }
-
-    // console.log(filter);
+        projectContainer.classList.remove('animation-out');
+    }, 300);
 });
 
 function scrollIntoView(selector) {
