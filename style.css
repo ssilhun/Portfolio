@@ -318,7 +318,7 @@ p {
     
 }
 
-.category__btn.active, 
+.category__btn.selected, 
 .category__btn:hover {
     background-color: var(--color-sky);
     color: var(--color-white);
