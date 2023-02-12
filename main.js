@@ -120,3 +120,38 @@ function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+// 1. Take all the section elements
+// 2. Observe all section using IntersectionObserver
+// 3. Activate the item corresponding to the displayed section
+
+const sectionIds = [
+    '#home',
+    '#about',
+    '#skills',
+    '#work',
+    '#testimonials',
+    '#contact',
+];
+
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => 
+    document.querySelector('[data-link="${id}"]'));
+
+// console.log(sections);
+// console.log(navItems);
+
+const observeOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+}
+
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        console.log(entry.target);
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observeOptions);
+sections.forEach(section => observer.observe(section));
