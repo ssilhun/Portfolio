@@ -136,12 +136,20 @@ const sectionIds = [
 
 const sections = sectionIds.map(id => document.querySelector(id));
 const navItems = sectionIds.map(id => 
-    document.querySelector('[data-link="${id}"]'));
+    document.querySelector(`[data-link="${id}"]`));
 
 // console.log(sections);
 // console.log(navItems);
-
-const observeOptions = {
+let selectedNavIndex;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+            selectedNavItem.classList.remove('active');
+            selectedNavItem = selected;
+            // const navItem = navItems[selectedIndex];
+            // navItem.classList.add('active');
+            selectedNavItem.classList.add('active');
+}
+const observerOptions = {
     root: null,
     rootMargin: '0px',
     threshold: 0.3,
@@ -149,9 +157,25 @@ const observeOptions = {
 
 const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
-        console.log(entry.target);
+        // console.log(entry.target);
+        if(!entry.isIntersecting && entry.intersectionRatio > 0) {
+            const index = sectionIds.indexOf(`#${entry.target.id}`);
+            // console.log(index, entry.target.id);
+            // Getting up page when scrolling down
+            if(entry.boundingClientRect.y < 0) {
+                selectedNavIndex = index + 1;
+            }
+            else{
+                selectedNavIndex = index - 1;
+            }
+            // selectedNavItem.classList.remove('active');
+            // selectedNavItem = navItems[selectedIndex];
+            // const navItem = navItems[selectedIndex];
+            // navItem.classList.add('active');
+            // selectedNavItem.classList.add('active');
+        }
     });
 };
 
-const observer = new IntersectionObserver(observerCallback, observeOptions);
+const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
