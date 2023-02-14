@@ -107,15 +107,18 @@ p {
 
 #navbar.navbar--dark {
     background-color: var(--color-sky);
+    padding: 8px;
 }
 
 .navbar__logo {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
+    color: var(--color-white);
 }
 
 .navbar__menu {
     display: flex;
+    margin: 0;
 }
 
 .navbar__menu_item {
@@ -138,8 +141,10 @@ p {
 
 .navbar__toggle-btn {
     position: absolute;
+    top: 24px;
     right: 32px;
     font-size: var(--font-medium);
+    color: var(--color-white);
     display: none;
 }
 
@@ -433,7 +438,7 @@ p {
 }
 
 .testimonials {
-    margin: auto;
+    margin: 40px;
 }
 
 .testimonial {
@@ -456,7 +461,7 @@ p {
 }
 
 .testimonial__speach-bubble {
-    margin: auto;
+    margin: 18px;
     background-color: var(--color-white);
     border-radius: var(--size-border-radius);
 }
@@ -485,7 +490,7 @@ p {
 
 .contact__links {
     font-size: var(--font-large);
-    margin: 24px;
+    margin: 24px 0;
     transition: all var(--animation-duration) ease-in;
 }
 

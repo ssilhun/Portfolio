@@ -27,7 +27,9 @@ navbarMenu.addEventListener('click', (event) => {
     // const scrollTo = document.querySelector(link);
     // scrollTo.scrollIntoView({behavior: "smooth"});
     navbarMenu.classList.remove('open');
+    // console.log(scrollIntoView(link));
     scrollIntoView(link);
+    selectNavItem(target);
 });
 
 // Navbar toggle button for smaal screen
@@ -140,7 +142,7 @@ const navItems = sectionIds.map(id =>
 
 // console.log(sections);
 // console.log(navItems);
-let selectedNavIndex;
+let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
             selectedNavItem.classList.remove('active');
@@ -153,7 +155,7 @@ const observerOptions = {
     root: null,
     rootMargin: '0px',
     threshold: 0.3,
-}
+};
 
 const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
@@ -179,3 +181,24 @@ const observerCallback = (entries, observer) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+    const a = Math.round(window.scrollY + window.innerHeight);
+    if(window.scrollY === 0) {
+        selectedNavIndex = 0;
+    }
+    else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
+        selectedNavIndex = navItems.length - 1;
+    }
+    
+    // console.log(selectedNavIndex);
+    // console.log(Math.round(window.scrollY));
+    // console.log(window.scrollY+window.innerHeight);
+    // console.log(window.scrollY+window.innerHeight, document.body.clientHeight);
+    // console.log(window.scrollY);
+    // console.log(window.innerHeight);
+    // console.log(document.body.clientHeight);
+    // console.log((navItems[selectedNavIndex]));
+    selectNavItem(navItems[selectedNavIndex]);
+
+});
