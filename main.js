@@ -118,11 +118,6 @@ target.classList.add('selected');
     }, 300);
 });
 
-function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: "smooth"});
-}
-
 // 1. Take all the section elements
 // 2. Observe all section using IntersectionObserver
 // 3. Activate the item corresponding to the displayed section
@@ -151,6 +146,14 @@ function selectNavItem(selected) {
             // navItem.classList.add('active');
             selectedNavItem.classList.add('active');
 }
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
+
 const observerOptions = {
     root: null,
     rootMargin: '0px',
