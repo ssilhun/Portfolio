@@ -23,11 +23,8 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-    // console.log(link);
-    // const scrollTo = document.querySelector(link);
-    // scrollTo.scrollIntoView({behavior: "smooth"});
     navbarMenu.classList.remove('open');
-    // console.log(scrollIntoView(link));
+
     scrollIntoView(link);
     selectNavItem(target);
 });
@@ -49,10 +46,6 @@ HomeContactBtn.addEventListener('click', () => {
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-    // console.log(window.scrollY);
-    // console.log(`navbarHeight: ${navbarHeight}`);
-    // console.log(`home: ${homeHeight}`);
-    // console.log(1 - window.scrollY / homeHeight);?
     const opacityControl = 1 - window.scrollY / homeHeight;
     home.style.opacity = opacityControl;
 });
@@ -111,9 +104,6 @@ target.classList.add('selected');
         //     project = projects[i];
         //     console.log(project);
         // }
-    
-        // console.log(filter);
-
         projectContainer.classList.remove('animation-out');
     }, 300);
 });
@@ -135,8 +125,6 @@ const sections = sectionIds.map(id => document.querySelector(id));
 const navItems = sectionIds.map(id => 
     document.querySelector(`[data-link="${id}"]`));
 
-// console.log(sections);
-// console.log(navItems);
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
 function selectNavItem(selected) {
@@ -147,12 +135,12 @@ function selectNavItem(selected) {
             selectedNavItem.classList.add('active');
 }
 
+// Scroll the selected section when click the navbar
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
     selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
-
 
 const observerOptions = {
     root: null,
@@ -162,10 +150,8 @@ const observerOptions = {
 
 const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
-        // console.log(entry.target);
         if(!entry.isIntersecting && entry.intersectionRatio > 0) {
             const index = sectionIds.indexOf(`#${entry.target.id}`);
-            // console.log(index, entry.target.id);
             // Getting up page when scrolling down
             if(entry.boundingClientRect.y < 0) {
                 selectedNavIndex = index + 1;
@@ -173,11 +159,6 @@ const observerCallback = (entries, observer) => {
             else{
                 selectedNavIndex = index - 1;
             }
-            // selectedNavItem.classList.remove('active');
-            // selectedNavItem = navItems[selectedIndex];
-            // const navItem = navItems[selectedIndex];
-            // navItem.classList.add('active');
-            // selectedNavItem.classList.add('active');
         }
     });
 };
@@ -185,6 +166,7 @@ const observerCallback = (entries, observer) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
 
+// Active navbar edge case when scrolling
 window.addEventListener('wheel', () => {
     const a = Math.round(window.scrollY + window.innerHeight);
     if(window.scrollY === 0) {
@@ -193,15 +175,6 @@ window.addEventListener('wheel', () => {
     else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
         selectedNavIndex = navItems.length - 1;
     }
-    
-    // console.log(selectedNavIndex);
-    // console.log(Math.round(window.scrollY));
-    // console.log(window.scrollY+window.innerHeight);
-    // console.log(window.scrollY+window.innerHeight, document.body.clientHeight);
-    // console.log(window.scrollY);
-    // console.log(window.innerHeight);
-    // console.log(document.body.clientHeight);
-    // console.log((navItems[selectedNavIndex]));
     selectNavItem(navItems[selectedNavIndex]);
 
 });
