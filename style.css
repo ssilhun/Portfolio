@@ -281,6 +281,7 @@ p {
 
 .tools {
     background-color: var(--color-grey);
+    height: 50%;
 }
 
 .skillset__title {
@@ -433,12 +434,13 @@ p {
     background-color: var(--color-white);
 }
 
+/* Testimonial */
 #testimonials {
     background-color: var(--color-light-white);
 }
 
 .testimonials {
-    margin: 40px;
+    margin: auto;
 }
 
 .testimonial {

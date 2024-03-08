@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jace's Portfolio</title>
+    <!-- SEO (search engine optimization) -->
+    <title>Jace&#39;s Portfolio</title>
     <meta name="description" content="Portfolio for the world-renowned software engineer Jace">
     <meta name="author" content="Jace">
     <link rel="icon" type="image/png" href="image/favicon2.png">
+    <!-- OG (Open graph data)-->
+    <meta property="og:title" content="Jace's Portfolio" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="URL" />
+    <meta property="og:image" content="img url" />
+
     <script src="https://kit.fontawesome.com/3620d8b344.js" crossorigin="anonymous"></script>
     <!--
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -68,45 +75,68 @@
     <section id="about" class="section section__container">
         <h1>About me</h1>
         <!-- p>lorem -->
-        <p>I completed a software development course at the University of South Australia, and I am always challenging myself to learn new things in the midst of the development of various programs and the rapid change.</p>
+        <p>Currently, I have completed my degree in software development and am actively looking for a position as a junior web developer. To become a future IT developer, I am developing my knowledge by leaving open various possibilities. I am always challenging myself to learn new things in the midst of the IT industry the rapid change.</p>
         <div class="about__majors">
             <div class="major">
                 <div class="major__icon">
                     <i class="fa-brands fa-html5"></i>
                 </div>
                 <h2 class="major__title">Front-end</h2>
-                <div class="major__description">HTML</div>
+                <div class="major__description">
+                    HTML, CSS, Javascript, React,<br>
+                    PHP, Ruby on Rails
+                </div>
             </div>
             <div class="major">
                 <div class="major__icon">
-                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-solid fa-mobile"></i>
                 </div>
-                <h2 class="major__title">Front-end</h2>
-                <div class="major__description">CSS</div>
+                <h2 class="major__title">Mobile</h2>
+                <div class="major__description">Android</div>
             </div>
             <div class="major">
                 <div class="major__icon">
-                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-solid fa-server"></i>
                 </div>
-                <h2 class="major__title">Front-end</h2>
-                <div class="major__description">JavaScript</div>
+                <h2 class="major__title">Back-end</h2>
+                <div class="major__description">Java, JavaScript, Python, PHP, SQL, C</div>
             </div>
         </div>
         <div class="about__jobs">
             <div class="job">
                 <!-- img.job__logo -->
-                <img src="image/favicon2.png" alt="log name" class="job__logo">
+                <img src="image/Job_3.jpeg" alt="log name" class="job__logo">
                 <div class="job__description">
                     <!-- p.job__name -->
                     <p class="job__name">
-                        Currently working at ... as Software engineer
+                        <!--Currently working at ... as Software engineer-->
+                        Currently learning at 42 Adelaide
                     </p>
-                    <p class="job__period">2022 Dec = Until ...</p>
-
+                    <p class="job__period">2024 Jan - Current</p>
                 </div>
-
             </div>
-            <div class="job"></div>
+            <div class="job">
+                <!-- img.job__logo -->
+                <img src="image/Job_2.jpeg" alt="log name" class="job__logo">
+                <div class="job__description">
+                    <!-- p.job__name -->
+                    <p class="job__name">
+                        James Anthony Consulting as Software developer intern
+                    </p>
+                    <p class="job__period">2023 Feb - 2023 May</p>
+                </div>
+            </div>
+            <div class="job">
+                <!-- img.job__logo -->
+                <img src="image/Job_1.jpeg" alt="log name" class="job__logo">
+                <div class="job__description">
+                    <!-- p.job__name -->
+                    <p class="job__name">
+                        University of South Australia as Student
+                    </p>
+                    <p class="job__period">2020 - 2022</p>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -155,10 +185,10 @@
                     <div class="skill">
                         <div class="skill_description">
                             <span>React: basic</span>
-                            <span>5%</span>
+                            <span>10%</span>
                         </div>
                         <div class="skill__bar">
-                            <div class="skill__value" style="width: 5%;"></div>
+                            <div class="skill__value" style="width: 10%;"></div>
                         </div>
                     </div>
                     <div class="skill">
@@ -177,11 +207,13 @@
                         <ul class="tools__list">
                             <li><span>Visual Studio Code</span></li>
                             <li><span>Android Studio code</span></li>
+                            <li><span>Eclipse</span></li>
                         </ul>
                     </div>
                     <div class="etc">
                         <h3 class="skillset__title">Etc</h3>
                         <ul class="etc__list">
+                            <li><span>Microsoft Office</span></li>
                             <li><span>Git</span></li>
                         </ul>
                     </div>
@@ -198,7 +230,7 @@
                 
                 <button class="category__btn selected" data-filter="*">
                     <span class="category__name">All</span>
-                    <span class="category__count">7</span>
+                    <span class="category__count">4</span>
                 </button>
                 <button class="category__btn" data-filter="front-end">
                     <span class="category__name">Front-end</span>
@@ -206,68 +238,44 @@
                 </button>
                 <button class="category__btn" data-filter="back-end">
                     <span class="category__name">Back-end</span>
-                    <span class="category__count">2</span>
+                    <span class="category__count">1</span>
                 </button>
                 <button class="category__btn" data-filter="mobile">
                     <span class="category__name">Mobile</span>
-                    <span class="category__count">3</span>
+                    <span class="category__count">1</span>
                 </button>
 
             </div>
             <div class="work__projects">
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="mobile">
-                    <img class="project__img" src="image/Pfojects/iphone.png" alt="game">
+                <a class="project" target="blank" data-type="back-end">
+                    <img class="project__img" src="image/project_1.png" alt="web">
                     <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
+                        <h3>SMX Stripe Portal</h3>
+                        <span>Implementation of a website’s admin user to control the Stripe Connect transaction using Laravel-php framework</span>
                     </div>
                 </a>
 
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="back-end">
-                    <img class="project__img" src="image/Pfojects/macbook.png" alt="web">
+                <a class="project" target="blank" data-type="mobile">
+                    <img class="project__img" src="image/project_2.png" alt="iPhon">
                     <div class="project__description">
-                        <h3>mac application</h3>
-                        <span>Web page</span>
+                        <h3>Android Game</h3>
+                        <span>Implementation of a similar type of Android-based game to Bullet hell</span>
                     </div>
                 </a>
 
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="mobile">
+                <a class="project" target="blank" data-type="front-end">
+                    <img class="project__img" src="image/project_3.png" alt="iPhon">
+                    <div class="project__description">
+                        <h3>QIS website</h3>
+                        <span>Implementation of the basic website visual UI and the mobile version website visual UI</span>
+                    </div>
+                </a>
+
+                <a class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="image/Pfojects/iphone.png" alt="iPhon">
                     <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="mobile">
-                    <img class="project__img" src="image/Pfojects/iphone.png" alt="mobile">
-                    <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="back-end">
-                    <img class="project__img" src="image/Pfojects/iphone.png" alt="iPhon">
-                    <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="front-end">
-                    <img class="project__img" src="image/Pfojects/iphone.png" alt="iPhon">
-                    <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/ssilhun" class="project" target="blank" data-type="front-end">
-                    <img class="project__img" src="image/Pfojects/iphone.png" alt="iPhon">
-                    <div class="project__description">
-                        <h3>iPhone application</h3>
-                        <span>Android Game</span>
+                        <h3>Own Portfolio</h3>
+                        <span>Implementation of the basic portfolio website</span>
                     </div>
                 </a>
             </div>
@@ -310,7 +318,7 @@
                 <i class="fa-brands fa-linkedin"></i>
             </a>
         </div>
-        <p class="contact__rights">2022 Jace - All rights reserved</p>
+        <p class="contact__rights">2023 Jace - All rights reserved</p>
     </section>
 
     <!-- Arrow up button -->
