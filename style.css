@@ -469,7 +469,12 @@ p {
 }
 
 .testimonial__speach-bubble p {
+    margin: 18px;
     color: var(--color-grey);
+}
+
+.testimonial__speach-bubble p.description{
+    text-align: justify;
 }
 
 .testimonial__speach-bubble a {
